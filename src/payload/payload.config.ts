@@ -23,9 +23,11 @@ import { seed } from './endpoints/seed'
 import { Footer } from './globals/Footer'
 import { Header } from './globals/Header'
 import { Settings } from './globals/Settings'
+import Programme from './collections/Programme'
+import { Djs } from './collections/Djs'
 
 const generateTitle: GenerateTitle = () => {
-  return 'My Website'
+  return 'Radio Sofa'
 }
 
 dotenv.config({
@@ -66,7 +68,7 @@ export default buildConfig({
   }),
   // database-adapter-config-end
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
-  collections: [Pages, Posts, Projects, Media, Categories, Users, Comments],
+  collections: [ Djs, Programme, Pages, Posts, Projects, Media, Categories, Users, Comments],
   globals: [Settings, Header, Footer],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
